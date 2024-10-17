@@ -25,7 +25,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -57,7 +56,7 @@ fun CalculatorScreen(
                 .background(color = MaterialTheme.colorScheme.primaryContainer),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            MoreIcon(modifier = Modifier, state, onEvent)
+            MoreIcon(onEvent)
         }
         Spacer(
             modifier = Modifier
@@ -79,7 +78,7 @@ fun CalculatorScreen(
                     onEvent(UiEvent.OnHistoryClearClicked)
                 })
             } else {
-                ButtonBox(modifier = Modifier, state, onEvent)
+                ButtonBox( onEvent)
 
             }
 
@@ -96,7 +95,7 @@ fun ExpressionBox(
     state: UiState,
     onEvent: (UiEvent) -> Unit,
 ) {
-    Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.End) {
+    Column(modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.End) {
         Spacer(Modifier.weight(2f))
         Text(
             text = state.mainExpression,
@@ -124,8 +123,6 @@ fun ExpressionBox(
 
 @Composable
 fun MoreIcon(
-    modifier: Modifier = Modifier,
-    state: UiState,
     onEvent: (UiEvent) -> Unit,
 ) {
     IconButton(onClick = {
@@ -156,18 +153,16 @@ fun MoreIcon(
 
 @Composable
 fun ButtonBox(
-    modifier: Modifier = Modifier,
-    state: UiState,
     onEvent: (UiEvent) -> Unit,
 ) {
 
     val primary = MaterialTheme.colorScheme.primary
-    val onPrimary = MaterialTheme.colorScheme.onPrimary
+//    val onPrimary = MaterialTheme.colorScheme.onPrimary
     val secondary = MaterialTheme.colorScheme.secondary
-    val onSecondary = MaterialTheme.colorScheme.onSecondary
+//    val onSecondary = MaterialTheme.colorScheme.onSecondary
     val tertiary = MaterialTheme.colorScheme.tertiary
-    val onTertiary = MaterialTheme.colorScheme.onTertiary
-    Column() {
+//    val onTertiary = MaterialTheme.colorScheme.onTertiary
+    Column {
         Spacer(Modifier.weight(2f))
         Row(
             modifier = Modifier.fillMaxWidth(),

@@ -16,14 +16,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.calculator11.data.local.model.History
 
 @Composable
 fun HistoryScreen(
     histories: List<History>,
-    modifier: Modifier = Modifier,
     onHistoryClicked: (String) -> Unit,
     onHistoryClearClicked: () -> Unit,
 ) {

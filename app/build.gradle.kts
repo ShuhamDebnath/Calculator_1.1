@@ -81,8 +81,8 @@ dependencies {
     val nav_version = "2.8.3"
     implementation ("androidx.navigation:navigation-compose:$nav_version")
 
-    val lifecycle_version = "2.8.6"
     // ViewModel utilities for Compose
+    val lifecycle_version = "2.8.6"
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
 
     implementation("com.ezylang:EvalEx:3.4.0")

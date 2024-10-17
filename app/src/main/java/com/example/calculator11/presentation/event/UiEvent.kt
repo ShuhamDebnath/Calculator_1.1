@@ -1,7 +1,5 @@
 package com.example.calculator11.presentation.event
 
-import com.example.calculator11.data.local.model.History
-
 sealed interface UiEvent {
     data class OnButtonClicked(val value :String): UiEvent
     data object HistoryClicked: UiEvent
